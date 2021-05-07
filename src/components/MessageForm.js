@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { SendOutlined, PictureOutlined } from "@ant-design/icons";
-import { sendMessage, isTyping } from "react-chat-engine";
+import { sendMessage } from "react-chat-engine";
 
 const MessageForm = (props) => {
   const [value, setValue] = useState("");
@@ -8,8 +8,6 @@ const MessageForm = (props) => {
 
   const handleChange = (event) => {
     setValue(event.target.value);
-
-    isTyping(props, chatId);
   };
 
   const handleSubmit = (event) => {
