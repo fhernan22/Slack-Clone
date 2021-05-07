@@ -3,13 +3,16 @@ import { ChatEngine } from "react-chat-engine";
 
 import "./App.css";
 
+import ChatFeed from "./components/ChatFeed";
+
 const App = () => {
   return (
     <ChatEngine
       height="100vh"
-      projectID="c5dde678-78d4-468e-b316-096590553aee"
+      projectID={process.env.REACT_APP_PROJECT_ID}
       userName="fhern103"
-      userSecret="Messifan1"
+      userSecret={process.env.REACT_APP_USER_SECRET}
+      renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
     />
   );
 };
